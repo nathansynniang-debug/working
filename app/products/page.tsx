@@ -6,14 +6,14 @@ const products = [
     name: "Jainsem",
     image: "/jainsem.png",
     description: "Traditional Khasi attire, elegant and timeless.",
-    link: "/products/jainsem.png",
+    link: "/jainsem.png",
     flag: "/khasiflag.png", // Add flag path
   },
   {
     name: "Jymphong",
     image: "/jymphong.png",
     description: "Traditional Khasi attire for males.",
-    link: "/products/jymphong.png",
+    link: "/jymphong.png",
     flag: "/khasiflag.png", // Add flag path
   },
 ];
