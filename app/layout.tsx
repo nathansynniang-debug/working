@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+// 1. Import 'Image' and 'Link' from next
+import Image from "next/image";
+import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -29,51 +32,58 @@ export default function RootLayout({
       >
         <nav className="w-full bg-[#f5efe6] py-3 px-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <img
+            <Image
               src="/Handloom logo.png"
               alt="Handloom Logo"
-              className="``w-8 h-8 object-contain"
+              // <Image> requires 'width' and 'height' or 'fill'
+              width={32} // Equivalent to w-8 (32px)
+              height={32} // Equivalent to h-8 (32px)
+              className="object-contain" // Retained object-contain
+              priority // Prioritize loading the logo
             />
-            <span className="text-2xl font-extrabold tracking-wide text-[#3d2612] select-none">CraftLink</span>
+            <span className="text-2xl font-extrabold tracking-wide text-[#3d2612] select-none">
+              CraftLink
+            </span>
           </div>
           <ul className="flex gap-8">
             <li>
-              <a
+
+              <Link
                 href="/"
                 className="text-xl font-bold text-[#2a180a] transition-transform duration-200 hover:scale-110 hover:text-[#7c4f2c] focus:outline-none"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+
+              <Link
                 href="/about"
                 className="text-xl font-bold text-[#2a180a] transition-transform duration-200 hover:scale-110 hover:text-[#7c4f2c] focus:outline-none"
               >
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              
+              <Link
                 href="/products"
                 className="text-xl font-bold text-[#2a180a] transition-transform duration-200 hover:scale-110 hover:text-[#7c4f2c] focus:outline-none"
               >
                 Products
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/contact"
                 className="text-xl font-bold text-[#2a180a] transition-transform duration-200 hover:scale-110 hover:text-[#7c4f2c] focus:outline-none"
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
-        <div className="pt-8 px-4 max-w-4xl mx-auto">
-          {children}
-        </div>
+        <div className="pt-8 px-4 max-w-4xl mx-auto">{children}</div>
       </body>
     </html>
   );
